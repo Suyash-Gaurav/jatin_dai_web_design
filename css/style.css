@@ -1,31 +1,33 @@
 /* Root Variables */
 :root {
     /* Primary Colors */
-    --primary-gold: #D4AF37;
+    --primary-gold: #e67e22;
     --secondary-gold: #C5A028;
     --deep-brown: #4A3C2B;
     --olive-green: #808000;
     
     /* Neutral Colors */
     --cream: #FFF8E7;
-    --light-beige: #F5EBD8;
+    --light-beige: #f5f5f5;
     --dark-beige: #E6D5B8;
     
     /* UI Colors */
-    --text-dark: #2C1810;
+    --text-dark: #2c3e50;
     --text-light: #FFF8E7;
-    --background: #FFFFFF;
+    --background: #ffffff;
     --overlay: rgba(74, 60, 43, 0.85);
+    --text-muted: #666;
     
     /* Layout */
     --header-height: 80px;
     --container-width: 1200px;
     
     /* Effects */
-    --gold-gradient: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    --shadow-soft: 0 4px 12px rgba(74, 60, 43, 0.1);
+    --gold-gradient: linear-gradient(45deg, #e67e22, #f39c12);
+    --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.05);
     --shadow-strong: 0 8px 24px rgba(74, 60, 43, 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lifted: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* Global Styles */
@@ -36,7 +38,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: var(--background);
@@ -49,7 +51,7 @@ h1, h2, h3, h4, .nav-links {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 20px;
 }
 
 /* Header & Navigation */

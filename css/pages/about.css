@@ -14,132 +14,124 @@ body {
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(to bottom, var(--light-beige), var(--background));
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../../images/hero-bg.jpg') center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 8rem 2rem 6rem;
-    margin-bottom: 5rem;
-    border-bottom: 2px solid var(--light-beige);
+    color: white;
+    padding: 0 20px;
+    margin-bottom: 0;
 }
 
 .about-hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.about-hero p {
-    font-size: 1.35rem;
-    color: var(--text-muted);
-    max-width: 800px;
+/* Story Detail Section */
+.story-detail {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 60px 20px;
 }
 
-/* Main Content */
-.about-content {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 2rem 6rem;
+.story-section {
+    background: white;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.company-story, .values, .team {
-    margin-bottom: 7rem;
+.story-section:hover {
+    transform: translateY(-5px);
 }
 
-h2 {
+.story-section h2 {
+    color: var(--primary-gold);
     font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 25px;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 15px;
 }
 
-h2::after {
+.story-section h2::after {
     content: '';
     position: absolute;
     bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-gold);
+}
+
+.story-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--gold-gradient);
-    border-radius: 2px;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-gold);
 }
 
-.company-story p, .team p {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.9;
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    width: 50%;
+    padding: 0 40px;
 }
 
-/* Values Grid */
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
+.timeline-item:nth-child(odd) {
+    left: 0;
 }
 
-.value-card {
-    background: var(--background);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow-soft);
-    transition: all 0.4s ease;
-    border: 1px solid var(--light-beige);
-}
-
-.value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lifted);
-    border-color: var(--primary-gold);
-}
-
-.value-card h3 {
-    color: var(--primary-gold);
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.value-card p {
-    color: var(--text-muted);
-    line-height: 1.8;
-    font-size: 1.1rem;
+.timeline-item:nth-child(even) {
+    left: 50%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .about-hero {
-        padding: 6rem 1.5rem 4rem;
-    }
-
     .about-hero h1 {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
     }
 
-    .about-content {
-        padding: 0 1.5rem 4rem;
+    .story-section {
+        padding: 20px;
     }
 
-    h2 {
-        font-size: 2.25rem;
+    .timeline::before {
+        left: 20px;
     }
 
-    .values-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
     }
 
-    .value-card {
-        padding: 2rem;
+    .timeline-item:nth-child(even) {
+        left: 0;
     }
 }
 
