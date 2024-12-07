@@ -12,7 +12,7 @@ body {
     background: var(--background);
 }
 
-/* Hero Section */
+/* Hero Section - Unified Style */
 .about-hero {
     background: linear-gradient(to bottom, var(--light-beige), var(--background));
     text-align: center;
@@ -30,6 +30,8 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .about-hero p {
@@ -46,40 +48,59 @@ body {
     padding: 0 2rem 6rem;
 }
 
-.company-story, .values, .team {
-    margin-bottom: 7rem;
+/* Story Detail Sections */
+.story-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
+.story-section {
+    background: var(--background);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--light-beige);
+    transition: all 0.4s ease;
+}
+
+.story-section:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lifted);
+    border-color: var(--primary-gold);
+}
+
+/* Headings */
 h2 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 2rem;
     position: relative;
     padding-bottom: 1rem;
+    color: var(--text-dark);
 }
 
 h2::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 80px;
     height: 3px;
     background: var(--gold-gradient);
     border-radius: 2px;
 }
 
-.company-story p, .team p {
+/* Paragraphs */
+.story-detail p {
     font-size: 1.15rem;
     color: var(--text-muted);
-    max-width: 900px;
-    margin: 0 auto;
     line-height: 1.9;
+    margin-bottom: 1.5rem;
 }
 
-/* Values Grid */
+/* Values Section */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -115,6 +136,31 @@ h2::after {
     font-size: 1.1rem;
 }
 
+/* Learn More Button */
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    background: var(--gold-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.learn-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lifted);
+}
+
+/* Company Story Section */
+.company-story {
+    margin-bottom: 7rem;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-hero {
@@ -133,6 +179,10 @@ h2::after {
         font-size: 2.25rem;
     }
 
+    .story-section {
+        padding: 2rem;
+    }
+
     .values-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -140,5 +190,9 @@ h2::after {
 
     .value-card {
         padding: 2rem;
+    }
+
+    .story-detail {
+        padding: 20px;
     }
 }

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Toggle mobile menu
     hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
+        this.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 
@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
         }
+    });
+
+    // Close menu when clicking a link (for mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
     });
 
     // Handle dropdown menus
