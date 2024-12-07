@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - ESHER OILs</title>
+    <meta name="description" content="ESHER OILs - Global leader in premium oil trading, offering high-quality soybean, olive, and sunflower oils.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../../images/logo.jpeg" as="image">
+    <link rel="preload" href="../../css/style.css" as="style">
+    <link rel="preload" href="../../css/pages/about.css" as="style">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Regular stylesheets -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/pages/about.css">
     <link rel="stylesheet" href="../../css/components/navigation.css">
     <link rel="stylesheet" href="../../css/components/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="../../images/logo.jpeg" alt="ESHER OILs Logo">
+                <img src="../../images/logo.jpeg" alt="ESHER OILs Logo" width="50" height="50" loading="eager">
             </div>
             <div class="hamburger">
                 <span></span>
@@ -38,7 +52,15 @@
     </header>
 
     <main>
-        <section class="about-hero">
+        <section class="about-hero" role="banner">
+            <picture>
+                <source srcset="../../images/hero-bg.webp" type="image/webp">
+                <source srcset="../../images/hero-bg.jpg" type="image/jpeg">
+                <img src="../../images/hero-bg.jpg" alt="ESHER OILs Hero Image" 
+                     loading="eager" decoding="async" 
+                     width="1920" height="1080"
+                     class="hero-background">
+            </picture>
             <h1>About ESHER OILs</h1>
             <p>Excellence in Global Oil Trading Since 1995</p>
         </section>
@@ -102,7 +124,8 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section company-info">
-                <img src="../../images/logo.jpeg" alt="ESHER OILs Logo" class="footer-logo">
+                <img src="../../images/logo.jpeg" alt="ESHER OILs Logo" class="footer-logo" 
+                     width="50" height="50" loading="lazy">
                 <p>Leading the way in global oil trading with a commitment to quality, sustainability, and excellence in every drop we deliver.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin"></i></a>

@@ -1,4 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for lazy loading
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
+
+    // Observe all story sections
+    document.querySelectorAll('.story-section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Defer non-critical resources
+    function loadDeferredStyles() {
+        const additionalStyles = document.querySelectorAll('link[data-defer]');
+        additionalStyles.forEach(style => {
+            style.setAttribute('rel', 'stylesheet');
+        });
+    }
+
+    // Load non-critical resources after page load
+    if (window.requestIdleCallback) {
+        requestIdleCallback(loadDeferredStyles);
+    } else {
+        setTimeout(loadDeferredStyles, 0);
+    }
+
+    // Add smooth loading for images
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.style.opacity = '0';
+        img.addEventListener('load', function() {
+            img.style.transition = 'opacity 0.3s ease';
+            img.style.opacity = '1';
+        });
+    });
+
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
